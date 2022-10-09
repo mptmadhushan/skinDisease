@@ -83,7 +83,7 @@ const MainScreen = ({routes, navigation}) => {
         type: 'image/jpg',
         name: 'image.jpg',
       });
-      fetch('https://plant-disease-recog.herokuapp.com/api/v1.0/predict/', {
+      fetch('https://localhost/api/v1.0/predict/', {
         method: 'POST',
         headers: {
           'Content-Type': 'multipart/form-data',
