@@ -21,7 +21,7 @@ function MainStackNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Alert"
+        initialRouteName="OnBoard"
         screenOptions={{
           headerShown: TapGestureHandler,
         }}>

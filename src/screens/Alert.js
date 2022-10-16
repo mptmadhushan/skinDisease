@@ -16,7 +16,7 @@ export default function OnBoard({navigation, route}) {
       style={styles.container}
       source={require('../assets/images/bg.jpg')}>
       <LinearGradient
-        colors={['transparent', COLORS.primary, COLORS.primary]}
+        colors={['transparent', COLORS.third, COLORS.third]}
         style={styles.overlay}>
         <Text style={styles.title2}>Alert</Text>
         <View style={styles.box}>
