@@ -9,44 +9,28 @@ import {
 import {icons, images, SIZES, COLORS, FONTS} from '../helpers';
 import LinearGradient from 'react-native-linear-gradient';
 export default function OnBoard({navigation, route}) {
-  const {resData} = route.params;
-  const result = resData.result.detail;
-  console.log('hello from res', resData);
-  console.log(result);
   const api = {foo: 'bar', foz: 'baz'};
   return (
     <ImageBackground
       style={styles.container}
-      source={require('../assets/resultBG.png')}>
+      source={require('../assets/images/bg.jpg')}>
       <LinearGradient
         colors={['transparent', COLORS.primary, COLORS.primary]}
         style={styles.overlay}>
-        <Text style={styles.title2}>{result.name}</Text>
+        <Text style={styles.title2}>Disease Detected</Text>
         <View
           style={{marginTop: 20, alignItems: 'center', paddingHorizontal: 20}}>
-          <Text style={styles.title}>Symptoms</Text>
-          {result.symptoms &&
-            result.symptoms.map(list => (
-              <Text style={styles.des} key={list.index}>
-                ⦿{list.symptom}
-              </Text>
-            ))}
-          <Text style={styles.title}>Solutions</Text>
+          <Text style={styles.title}>Basal cell carcinoma</Text>
 
-          {result.solutions &&
-            result.solutions.map(list => (
-              <Text style={styles.des} key={list.index}>
-                ⦿{list.solution}
-              </Text>
-            ))}
+          <Text style={styles.title}>Solutions</Text>
         </View>
 
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('Home');
+            navigation.navigate('VisualizeDisease');
           }}
           style={styles.btn}>
-          <Text style={styles.btnText}>Home</Text>
+          <Text style={styles.btnText}>Visualize Disease</Text>
         </TouchableOpacity>
       </LinearGradient>
     </ImageBackground>
@@ -63,9 +47,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   btn: {
-    backgroundColor: COLORS.third,
+    backgroundColor: COLORS.secondary,
     height: 40,
-    width: 100,
+    width: 200,
     borderRadius: 20,
     margin: 10,
     marginTop: 20,

@@ -1,4 +1,4 @@
-const logo = require('../assets/plant.png');
+const logo = require('../assets/images/1.jpg');
 
 export default {
   logo,

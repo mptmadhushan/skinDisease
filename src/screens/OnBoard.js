@@ -10,11 +10,12 @@ import {
 } from 'react-native';
 import {icons, images, SIZES, COLORS, FONTS} from '../helpers';
 import LinearGradient from 'react-native-linear-gradient';
+import logo from '../assets/images/logo.png';
 export default function OnBoard({navigation}) {
   return (
     <ImageBackground
       style={styles.container}
-      source={require('../assets/images/Bg.png')}>
+      source={require('../assets/images/1.jpg')}>
       <LinearGradient
         colors={['transparent', COLORS.primary]}
         style={styles.overlay}>
@@ -25,7 +26,7 @@ export default function OnBoard({navigation}) {
             marginTop: SIZES.height * 0.2,
             resizeMode: 'contain',
           }}
-          source={images}
+          source={logo}
         />
         <Text style={styles.title2}>Take care of your</Text>
         <Text style={styles.title}>"Skin"</Text>
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   btn: {
-    backgroundColor: COLORS.third,
+    backgroundColor: COLORS.secondary,
     height: 40,
     width: 100,
     borderRadius: 20,

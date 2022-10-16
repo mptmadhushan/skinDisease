@@ -1,4 +1,4 @@
-export const pin = require('../assets/pin.png');
+export const pin = require('../assets/images/1.jpg');
 
 export default {
   pin,

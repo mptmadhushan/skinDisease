@@ -2,9 +2,14 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import OnBoard from '../screens/OnBoard';
+import ImageUpload from '../screens/ImageUpload';
 import Home from '../screens/Home';
 import Result from '../screens/Result';
-import CompSkin from '../screens/CompSkin';
+import CompSkin from '../screens/Skin';
+import VisualizeDisease from '../screens/VisualizeDisease';
+import MeasureSeverity from '../screens/MeasureSeverity';
+import Doctos from '../screens/Doctos';
+import Varani from '../screens/Varani';
 import {TapGestureHandler} from 'react-native-gesture-handler';
 
 const Stack = createStackNavigator();
@@ -36,6 +41,31 @@ function MainStackNavigator() {
           name="Result"
           options={{headerShown: false}}
           component={Result}
+        />
+        <Stack.Screen
+          name="ImageUpload"
+          options={{headerShown: false}}
+          component={ImageUpload}
+        />
+        <Stack.Screen
+          name="VisualizeDisease"
+          options={{headerShown: false}}
+          component={VisualizeDisease}
+        />
+        <Stack.Screen
+          name="MeasureSeverity"
+          options={{headerShown: false}}
+          component={MeasureSeverity}
+        />
+        <Stack.Screen
+          name="Doctos"
+          options={{headerShown: false}}
+          component={Doctos}
+        />
+        <Stack.Screen
+          name="Varani"
+          options={{headerShown: false}}
+          component={Varani}
         />
       </Stack.Navigator>
     </NavigationContainer>
