@@ -6,10 +6,12 @@ import {
   Text,
   Image,
   TextInput,
+  ScrollView,
   ImageBackground,
 } from 'react-native';
 import {icons, images, SIZES, COLORS, FONTS} from '../helpers';
 import LinearGradient from 'react-native-linear-gradient';
+
 export default function OnBoard({navigation, route}) {
   const [text, setText] = React.useState('');
 
@@ -19,7 +21,7 @@ export default function OnBoard({navigation, route}) {
       style={styles.container}
       source={require('../assets/images/bg.jpg')}>
       <LinearGradient
-        colors={['transparent', COLORS.primary, COLORS.primary]}
+        colors={[COLORS.third, 'transparent', COLORS.third]}
         style={styles.overlay}>
         <Text style={styles.title2}>Support Community</Text>
         <View style={styles.box}>
@@ -38,21 +40,48 @@ export default function OnBoard({navigation, route}) {
           onChangeText={val => setText(val)}
           value={text}
         />
-
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate('Doctos');
-          }}
-          style={styles.btn}>
-          <Text style={styles.btnText}>Post</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate('Doctos');
-          }}
-          style={styles.btn}>
-          <Text style={styles.btnText}>Cancel</Text>
-        </TouchableOpacity>
+        <View style={{flexDirection: 'row'}}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('Doctos');
+            }}
+            style={styles.btn}>
+            <Text style={styles.btnText}>Post</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('Doctos');
+            }}
+            style={styles.btn}>
+            <Text style={styles.btnText}>Cancel</Text>
+          </TouchableOpacity>
+        </View>
+        <ScrollView style={{flex: 1, height: SIZES.height * 0.3}}>
+          <View style={styles.box}>
+            <Text style={styles.title}>Patient01</Text>
+            <Text style={styles.title}>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. It is a
+              long established?
+            </Text>
+          </View>
+          <View style={styles.box}>
+            <Text style={styles.title}>Patient01</Text>
+            <Text style={styles.title}>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. It is a
+              long established?
+            </Text>
+          </View>
+          <View style={styles.box}>
+            <Text style={styles.title}>Patient01</Text>
+            <Text style={styles.title}>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. It is a
+              long established?
+            </Text>
+          </View>
+        </ScrollView>
       </LinearGradient>
     </ImageBackground>
   );
@@ -63,14 +92,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   overlay: {
-    marginTop: SIZES.height * 0.1,
-    height: SIZES.height * 0.9,
+    height: SIZES.height,
     alignItems: 'center',
   },
   btn: {
-    backgroundColor: COLORS.secondary,
+    backgroundColor: COLORS.third,
     height: 40,
-    width: 200,
+    width: 150,
     borderRadius: 20,
     margin: 10,
     marginTop: 20,
@@ -91,7 +119,7 @@ const styles = StyleSheet.create({
   title: {
     color: COLORS.black,
     fontSize: 15,
-    textAlign: 'center',
+    textAlign: 'left',
     paddingHorizontal: 20,
     fontWeight: 'bold',
   },
@@ -104,7 +132,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   title2: {
-    marginTop: SIZES.height * 0.3,
+    marginTop: SIZES.height * 0.1,
     color: COLORS.white,
     fontWeight: 'bold',
     fontSize: 30,
@@ -119,7 +147,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginTop: 20,
     display: 'flex',
-    alignItems: 'center',
+    // alignItems: 'center',
     alignContent: 'center',
     padding: 5,
     justifyContent: 'center',
@@ -129,6 +157,7 @@ const styles = StyleSheet.create({
     color: '#00BFA6',
     paddingLeft: 15,
     paddingRight: 15,
+    // placeHolder: 'white',
     marginTop: 10,
     borderWidth: 1,
     borderRadius: 10,
