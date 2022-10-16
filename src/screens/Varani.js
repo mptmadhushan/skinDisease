@@ -136,8 +136,8 @@ export default function Home({navigation}) {
 const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: COLORS.black},
   slide1: {
-    // backgroundColor: COLORS.secondary,
-    // borderColor: COLORS.primary,
+    // backgroundColor: COLORS.third,
+    // borderColor: COLORS.third,
     // borderWidth: 0.6,
     // borderRadius: 10,
     alignItems: 'center',
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: SIZES.width * 0.9,
     height: SIZES.height * 0.25,
-    shadowColor: COLORS.secondary,
+    shadowColor: COLORS.third,
     shadowOffset: {
       width: 1,
       height: 1,
@@ -257,7 +257,7 @@ const styles = StyleSheet.create({
     marginBottom: 50,
   },
   buttonStyle2: {
-    backgroundColor: '#8C3FB7',
+    backgroundColor: '#00BFA6',
     borderWidth: 0,
     color: '#FFFFFF',
     borderColor: '#00BFA6',
@@ -279,13 +279,13 @@ const styles = StyleSheet.create({
   },
   boxTextStyle: {
     fontFamily: 'Oh Whale - TTF',
-    color: COLORS.primary,
+    color: COLORS.third,
 
     fontSize: 12,
   },
   boxTextStyle2: {
     fontFamily: 'Oh Whale - TTF',
-    color: COLORS.primary,
+    color: COLORS.third,
 
     fontSize: 16,
   },
