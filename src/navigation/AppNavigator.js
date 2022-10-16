@@ -10,6 +10,9 @@ import VisualizeDisease from '../screens/VisualizeDisease';
 import MeasureSeverity from '../screens/MeasureSeverity';
 import Doctos from '../screens/Doctos';
 import Varani from '../screens/Varani';
+import Support from '../screens/Support';
+
+import Alert from '../screens/Alert';
 import {TapGestureHandler} from 'react-native-gesture-handler';
 
 const Stack = createStackNavigator();
@@ -18,7 +21,7 @@ function MainStackNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="OnBoard"
+        initialRouteName="Alert"
         screenOptions={{
           headerShown: TapGestureHandler,
         }}>
@@ -61,6 +64,16 @@ function MainStackNavigator() {
           name="Doctos"
           options={{headerShown: false}}
           component={Doctos}
+        />
+        <Stack.Screen
+          name="Support"
+          options={{headerShown: false}}
+          component={Support}
+        />
+        <Stack.Screen
+          name="Alert"
+          options={{headerShown: false}}
+          component={Alert}
         />
         <Stack.Screen
           name="Varani"

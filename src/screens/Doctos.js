@@ -6,17 +6,24 @@ import {
   Text,
   Image,
   Modal,
+  TextInput,
   ImageBackground,
 } from 'react-native';
 import {icons, images, SIZES, COLORS, FONTS} from '../helpers';
 import LinearGradient from 'react-native-linear-gradient';
 export default function OnBoard({navigation, route}) {
   const [modalVisible, setModalVisible] = React.useState(false);
+  const [modalVisibleRew, setModalVisibleRew] = React.useState(false);
+  const [text, setText] = React.useState('');
 
   const api = {foo: 'bar', foz: 'baz'};
   const handlePlayOnClose = () => {
     setModalVisible(!modalVisible);
   };
+  const handlePlayOnCloseRew = () => {
+    setModalVisibleRew(!modalVisibleRew);
+  };
+
   return (
     <ImageBackground
       style={styles.container}
@@ -73,7 +80,64 @@ export default function OnBoard({navigation, route}) {
                 style={styles.buttonStyle2m}
                 activeOpacity={0.5}
                 onPress={() => handlePlayOnClose()}>
-                <Text style={styles.buttonTextStyle}>close</Text>
+                <Text style={styles.btnText}>close</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={modalVisibleRew}>
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <Text style={styles.modalText}>Doctor Profile</Text>
+              <View style={styles.row}>
+                <Image
+                  style={{width: 100, height: 200, resizeMode: 'cover'}}
+                  source={require('../assets/images/doc.jpg')}
+                />
+                <View>
+                  <Text style={styles.title}>Uriah Doyle</Text>
+                  <Text style={styles.title2}>Dermatologist</Text>
+                  <Text
+                    style={{
+                      fontSize: 15,
+                      color: 'black',
+                      paddingHorizontal: 20,
+                    }}>
+                    ABC Medicare
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 15,
+                      color: 'black',
+                      paddingHorizontal: 20,
+                    }}>
+                    11.7KM
+                  </Text>
+                </View>
+
+                <View style={styles.cer}>
+                  <Text style={{fontSize: 25, color: 'white'}}>5</Text>
+                </View>
+              </View>
+              <Text style={styles.title2}>Add Reviews</Text>
+              <View styles={styles.box3}>
+                <TextInput
+                 style={styles.inputStyle}
+                 placeholder="Review"
+                  multiline={true}
+                  numberOfLines={4}
+                  onChangeText={val => setText(val)}
+                  value={text}
+                />
+              </View>
+              <TouchableOpacity
+                style={styles.buttonStyle2m}
+                activeOpacity={0.5}
+                onPress={() => handlePlayOnCloseRew()}>
+                <Text style={styles.btnText}>Add</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -117,7 +181,7 @@ export default function OnBoard({navigation, route}) {
             <Text style={styles.title2}>Dermatologist</Text>
             <TouchableOpacity
               onPress={() => {
-                handlePlayOnClose();
+                handlePlayOnCloseRew();
               }}
               style={styles.btn}>
               <Text style={styles.btnText}>Review</Text>
@@ -145,7 +209,7 @@ export default function OnBoard({navigation, route}) {
             <Text style={styles.title2}>Dermatologist</Text>
             <TouchableOpacity
               onPress={() => {
-                // navigation.navigate('VisualizeDisease');
+                handlePlayOnCloseRew();
               }}
               style={styles.btn}>
               <Text style={styles.btnText}>Review</Text>
@@ -173,7 +237,7 @@ export default function OnBoard({navigation, route}) {
             <Text style={styles.title2}>Dermatologist</Text>
             <TouchableOpacity
               onPress={() => {
-                // navigation.navigate('VisualizeDisease');
+                handlePlayOnCloseRew();
               }}
               style={styles.btn}>
               <Text style={styles.btnText}>Review</Text>
@@ -190,16 +254,24 @@ export default function OnBoard({navigation, route}) {
         <View style={styles.row}>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('Varani');
+              navigation.navigate('Alert');
             }}
-            style={styles.btn}>
-            <Text style={styles.btnText}>Next</Text>
+            style={styles.btn2}>
+            <Text style={styles.btnText}>Alert</Text>
           </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('Support');
+            }}
+            style={styles.btn2}>
+            <Text style={styles.btnText}>Support</Text>
+          </TouchableOpacity>
+
           <TouchableOpacity
             onPress={() => {
               navigation.navigate('Varani');
             }}
-            style={styles.btn}>
+            style={styles.btn2}>
             <Text style={styles.btnText}>Next</Text>
           </TouchableOpacity>
         </View>
@@ -241,6 +313,23 @@ const styles = StyleSheet.create({
   },
   btn: {
     backgroundColor: COLORS.third,
+    height: 40,
+    width: 100,
+    borderRadius: 20,
+    margin: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: COLORS.third,
+    shadowOffset: {
+      width: 12,
+      height: 12,
+    },
+    shadowOpacity: 0.98,
+    shadowRadius: 16.0,
+    elevation: 24,
+  },
+  btn2: {
+    backgroundColor: COLORS.primary,
     height: 40,
     width: 100,
     borderRadius: 20,
@@ -361,9 +450,9 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   buttonStyle2m: {
-    backgroundColor: COLORS.fourth,
+    backgroundColor: '#00BFA6',
     borderWidth: 0,
-    color: COLORS.third,
+    color: COLORS.white,
     borderColor: '#00BFA6',
     height: 30,
     width: 50,
@@ -376,5 +465,15 @@ const styles = StyleSheet.create({
     fontSize: 30,
     textAlign: 'left',
     color: '#00BFA6',
+  },
+  inputStyle: {
+    width:SIZES.width * 0.6,
+    color: '#00BFA6',
+    paddingLeft: 15,
+    paddingRight: 15,
+    marginTop:10,
+    borderWidth: 1,
+    borderRadius: 30,
+    borderColor: '#dadae8',
   },
 });
