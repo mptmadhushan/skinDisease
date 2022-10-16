@@ -22,7 +22,7 @@ export default function OnBoard({navigation, route}) {
       style={styles.container}
       source={require('../assets/images/bg.jpg')}>
       <LinearGradient
-        colors={['transparent', COLORS.primary, COLORS.primary]}
+        colors={['transparent', COLORS.third, COLORS.third]}
         style={styles.overlay}>
         <Modal animationType="slide" transparent={true} visible={modalVisible}>
           <View style={styles.centeredView}>
@@ -61,7 +61,13 @@ export default function OnBoard({navigation, route}) {
               <Text style={styles.title2}>Patient Reviews</Text>
               <View styles={styles.box3}>
                 <Text>Patient01 posted 10hoursago</Text>
-                <Text>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</Text>
+                <Text>
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                  The point of using Lorem Ipsum is that it has a more-or-less
+                  normal distribution of letters, as opposed to using 'Content
+                  here, content here', making it look like readable English.
+                </Text>
               </View>
               <TouchableOpacity
                 style={styles.buttonStyle2m}
@@ -73,9 +79,7 @@ export default function OnBoard({navigation, route}) {
           </View>
         </Modal>
         <Text style={styles.title1}>Doctors</Text>
-        <Text style={{textAlign: 'left', color: COLORS.primary}}>
-          Filter by
-        </Text>
+        <Text style={{textAlign: 'left', color: 'white'}}>Filter by</Text>
         <View style={styles.row}>
           <TouchableOpacity
             onPress={() => {
@@ -183,13 +187,22 @@ export default function OnBoard({navigation, route}) {
             </TouchableOpacity>
           </View>
         </View>
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate('Varani');
-          }}
-          style={styles.btn}>
-          <Text style={styles.btnText}>Next</Text>
-        </TouchableOpacity>
+        <View style={styles.row}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('Varani');
+            }}
+            style={styles.btn}>
+            <Text style={styles.btnText}>Next</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('Varani');
+            }}
+            style={styles.btn}>
+            <Text style={styles.btnText}>Next</Text>
+          </TouchableOpacity>
+        </View>
       </LinearGradient>
     </ImageBackground>
   );
@@ -209,7 +222,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   btn2: {
-    backgroundColor: COLORS.secondary,
+    backgroundColor: COLORS.third,
     height: 40,
     width: 200,
     borderRadius: 20,
@@ -227,7 +240,7 @@ const styles = StyleSheet.create({
     elevation: 24,
   },
   btn: {
-    backgroundColor: COLORS.secondary,
+    backgroundColor: COLORS.third,
     height: 40,
     width: 100,
     borderRadius: 20,
@@ -247,28 +260,28 @@ const styles = StyleSheet.create({
     color: COLORS.white,
   },
   title: {
-    color: COLORS.secondary,
+    color: COLORS.third,
     fontSize: 20,
     textAlign: 'center',
     paddingHorizontal: 20,
     fontWeight: 'bold',
   },
   title1: {
-    color: COLORS.primary,
+    color: COLORS.third,
     fontSize: 30,
     textAlign: 'center',
     paddingHorizontal: 20,
     fontWeight: 'bold',
   },
   title2: {
-    color: COLORS.primary,
+    color: COLORS.third,
     fontSize: 15,
     textAlign: 'center',
     paddingHorizontal: 20,
     fontWeight: 'bold',
   },
   title3: {
-    color: COLORS.primary,
+    color: COLORS.third,
     fontSize: 20,
     textAlign: 'center',
     backgroundColor: 'red',
@@ -300,11 +313,11 @@ const styles = StyleSheet.create({
     padding: 5,
     justifyContent: 'center',
   },
- box3: {
+  box3: {
     flexDirection: 'row',
     width: SIZES.width * 0.6,
     height: SIZES.width * 0.3,
-    backgroundColor:'#898C95',
+    backgroundColor: '#898C95',
     borderRadius: 10,
     marginTop: 20,
     display: 'flex',
